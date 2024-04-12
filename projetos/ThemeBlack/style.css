@@ -1,0 +1,53 @@
+html * {
+    top: 0;
+    margin: 0;
+    padding: 0;
+}
+#conteiner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.conteiner-centralizado {
+    background-color: white;
+    width: 20%;
+    height: 20%;
+    border-radius: 20px;
+    border: 1px solid white;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+.conteiner-dinamico {
+    width: 50%;
+    height: 100%;
+    border-radius: 20px;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#icone-lua {
+    display: none;
+}
+
+@keyframes animation-black {
+    from {
+        margin-left: 0%;
+    }
+    to {
+        margin-left: 50%;
+    }
+}
+@keyframes animation-white {
+    from {
+        margin-left: 50%;
+    }
+    to {
+        margin-left: 0%;
+    }
+}
