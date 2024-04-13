@@ -1,0 +1,44 @@
+ * {
+    padding: 0;
+    margin: 0;
+    top: 0;
+ }
+html {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: skyblue;
+} 
+.conteiner {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(28, 21, 21, 0.73);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.conteiner-central {
+    width: 60%;
+    height: 35%;
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+}
+.conteiner-horario {
+    width: 30%;
+    height: 100%;
+    background-color: rgba(28, 21, 21, 0.73);
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+    text-align: center top;
+    padding: 5px;
+    font-size: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.horario h1 {
+    font-size: 130px;
+}
