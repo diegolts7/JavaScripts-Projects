@@ -66,7 +66,7 @@ function atualizaCronometro(){
     }else{
         milisegundos = 0;
         segundos++;
-        if(segundos > 99){
+        if(segundos > 59){
             segundos = 0;
             minutos++;
         }
