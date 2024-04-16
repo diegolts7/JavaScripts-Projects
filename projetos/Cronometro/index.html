@@ -7,6 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="modal">
+        <div class="estruturaModal">
+            <div class="textoAlarme">
+                <p>Definir Alarme</p>
+            </div>
+            <div class="inputs">
+                <input type="text" class="inputNumero" maxlength="2" placeholder="Min" id="alarmeMinuto">
+                <input type="text" class="inputNumero" maxlength="2" placeholder="Seg" id="alarmeSegundo">
+            </div>
+            <div class="btnAlarme">
+                <input type="button" value="Definir Alarme" id="botaoAlarme">
+            </div>
+        </div>
+    </div>
     <div class="cronometro">
         <div class="telaHorario">
             <p id="horario">00:00:000</p>
@@ -16,8 +30,14 @@
             <input type="button" id="botaoPausar" value="Pausar">
             <input type="button" id="botaoContinuar" value="Continuar">
             <input type="button" id="botaoResetar" value="Resetar">
+            <input type="button" id="botaoDefinirAlarme" value="Alarme">
+            <input type="button" id="botaoResetarAlarme" value="Resetar Alarme">
+            <input type="button" id="botaoPararAlarme" value="Parar Alarme">
         </div>
     </div>
+    <audio id="audio">
+        <source src="sons/som-vibraçao.mp3" type="audio/mp3">
+    </audio>
     <script src="scripts.js"></script>
 </body>
 </html>
