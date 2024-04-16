@@ -141,7 +141,7 @@ function paraAudio() {
 function resetarAlarme() {
     textAlarmeMinuto.value = -1;
     textAlarmeSegundo.value = -1;
-    resetarAlarme.style.display = "none";
+    botaoResetarAlarme.style.display = "none";
     abrirModalBtn.style.display = "flex";
 }
 function alarme(){
