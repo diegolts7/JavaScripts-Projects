@@ -1,11 +1,18 @@
-const items = [
-    'Oranges',
-    'Oregano',
-    'Mozzarella cheese',
-    'Milk',
-    'Detergent powder'
- ];
 
- document.write("<h2>Lista de compras</h2>");
- document.write(`<ol><li>${items[0]}</li><br/><li>${items[1]}</li><br/><li>${items[2]}</li><br/><li>${items[3]}</li><br/><li>${items[4]}</li>
- </ol>`)
+
+function imprimir (){
+   return new Promise(resolve => {
+      setTimeout(()=>{
+         console.log("imprimiu");
+         resolve();
+      },5000);
+   })
+}
+async function esperar(){
+   console.log("vai imprimir");
+   await imprimir();
+   console.log("esperou");
+}
+esperar();
+
+ 
