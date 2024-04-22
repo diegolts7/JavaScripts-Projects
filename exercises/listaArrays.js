@@ -4,6 +4,7 @@ const btnExcluir = document.querySelector("#btnEx");
 const pesquisarExcluir = document.querySelector("#excluirFuncionario");
 const buscar = document.querySelector("#pesquisar");
 const filtrar = document.querySelector("#filtrar");
+const valorOriginalFiltrar = filtrar.value;
 const addFunc = document.querySelector("#btnAddFunc");
 
 
@@ -52,45 +53,96 @@ const Funcionarios = {
         let sexo = prompt("Informe o sexo do funcionario (M ou F):");
         let matricula = prompt("Informe a matricula(em numeros) do funcionario - EX(1111):");
         array.push(new Pessoa(nome,Number(idade),sexo,Number(matricula)));
+
+        conteiner.innerHTML = "";
+        Funcionarios.imprimirFuncionarios(array);
+
     },
 
     imprimirFuncionarios: (array)=>{
 
         conteiner.innerHTML = "";
-        array.forEach((pessoa) =>{
+        array.forEach((pessoa, indice) =>{
+
+            if(indice === 0){
+
+                let cabecalho = document.createElement("div");
+                cabecalho.className = "divConteiner";
+                cabecalho.style.backgroundColor = "#4F4F4F";
+                cabecalho.style.color = "white";
+
+                let divCabecalhoNome = document.createElement("div");
+
+                let divCabecalhoIdade = document.createElement("div");
+
+                let divCabecalhoSexo = document.createElement("div");
+
+                let divCabecalhoMatricula = document.createElement("div");
+
+                let cabecalhoNome = document.createElement("p")
+                cabecalhoNome.textContent = "Nome";
+
+                let cabecalhoIdade = document.createElement("p")
+                cabecalhoIdade.textContent = "Idade";
+
+                let cabecalhoSexo = document.createElement("p")
+                cabecalhoSexo.textContent = "Sexo";
+
+                let cabecalhoMatricula = document.createElement("p")
+                cabecalhoMatricula.textContent = "Matricula";
+
+                conteiner.appendChild(cabecalho);
+                cabecalho.appendChild(divCabecalhoNome);
+                cabecalho.appendChild(divCabecalhoIdade);
+                cabecalho.appendChild(divCabecalhoSexo);
+                cabecalho.appendChild(divCabecalhoMatricula);
+                divCabecalhoNome.appendChild(cabecalhoNome);
+                divCabecalhoIdade.appendChild(cabecalhoIdade);
+                divCabecalhoSexo.appendChild(cabecalhoSexo);
+                divCabecalhoMatricula.appendChild(cabecalhoMatricula);
+
+            }
 
             let div = document.createElement("div");
+            div.className = "divConteiner";
 
-            let h3 = document.createElement("h3");
-            h3.textContent = `Funcionario`;
+            let divNome = document.createElement("div");
 
-            let ul = document.createElement("ul");
+            let divIdade = document.createElement("div");
 
-            let liNome = document.createElement("li")
-            liNome.textContent = "Nome: " + pessoa.nome;
+            let divSexo = document.createElement("div");
 
-            let liIdade = document.createElement("li")
-            liIdade.textContent = `Idade: ${pessoa.idade}`;
+            let divMatricula = document.createElement("div");
 
-            let liSexo = document.createElement("li")
-            liSexo.textContent = "Sexo: " + pessoa.sexo;
+            let liNome = document.createElement("p")
+            liNome.textContent = pessoa.nome;
 
-            let liMatricula = document.createElement("li")
-            liMatricula.textContent = `Matricula: ${pessoa.matricula}`;
+            let liIdade = document.createElement("p")
+            liIdade.textContent = `${pessoa.idade}`;
+
+            let liSexo = document.createElement("p")
+            liSexo.textContent =  pessoa.sexo;
+
+            let liMatricula = document.createElement("p")
+            liMatricula.textContent = `${pessoa.matricula}`;
 
             conteiner.appendChild(div);
-            div.appendChild(h3);
-            ul.appendChild(liNome);
-            ul.appendChild(liIdade);
-            ul.appendChild(liSexo);
-            ul.appendChild(liMatricula);
-            div.appendChild(ul);
+            div.appendChild(divNome);
+            div.appendChild(divIdade);
+            div.appendChild(divSexo);
+            div.appendChild(divMatricula);
+            divNome.appendChild(liNome);
+            divIdade.appendChild(liIdade);
+            divSexo.appendChild(liSexo);
+            divMatricula.appendChild(liMatricula);
         });
     },
+
     removerListaFuncionarios: (array)=>{
         array.length = 0;
         conteiner.innerHTML = "";
     },
+
     removerFuncionario: (array,matricula)=>{
         array.forEach((elemento,indice) => {
             if(elemento.matricula === matricula){
@@ -99,6 +151,7 @@ const Funcionarios = {
         });
         Funcionarios.imprimirFuncionarios(array);
     },
+
     pesquisarFuncionario: (array,nome)=>{
         conteiner.innerHTML = "";
 
@@ -108,6 +161,7 @@ const Funcionarios = {
 
         Funcionarios.imprimirFuncionarios(arrayPesquisar);
     },
+
     filtrarFuncionario: (array, event)=>{
         if(event === "idade"){
 
@@ -147,7 +201,7 @@ const Funcionarios = {
             Funcionarios.imprimirFuncionarios(arrayOrdenado);
 
         }
-    }
+    },
 };
 
 //eventos
@@ -180,5 +234,6 @@ buscar.addEventListener("keydown", (e)=>{
 
 filtrar.addEventListener("change", (e)=>{
     Funcionarios.filtrarFuncionario(arrayPessoa, e.target.value);
+    filtrar.value = valorOriginalFiltrar;
 })
 
