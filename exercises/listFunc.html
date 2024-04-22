@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15pt;
+            text-align: justify;
+            margin: 0px;
+            padding: 0px;
+            top: 0px;
+            box-sizing: border-box;
+        }
+        ::-webkit-scrollbar {
+            width: 5px; /* Largura da barra de rolagem */
+            height: 100px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1C1C1C; /* Cor de fundo da barra de rolagem */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: gray; /* Cor da barra de rolagem */
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: black; /* Cor da barra de rolagem ao passar o mouse */
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 25px;
+        }
+        header {
+            background: linear-gradient(to right, #1C1C1C,#4F4F4F);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.6);
+            width: 100%;
+        }
+        header input, select {
+            margin: 5px;
+            border-radius: 5px;
+            background-color: aliceblue;
+            border: 1px solid aliceblue;
+            padding: 5px;
+            color: #1C1C1C;
+            cursor: pointer;
+        }
+        header label {
+            font-weight: bold;
+        }
+        .conteiner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 10px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+        .conteiner h3 {
+            font-size: 25px;
+        }
+        .conteiner div {
+            margin: 5px;
+            text-align: justify;
+        }
+        footer {
+            margin-top: auto;
+            width: 100%;
+            background: linear-gradient(to right, #1C1C1C,#4F4F4F);
+            padding: 5px;
+            display: flex;
+            align-items: center;
+        }
+        footer p {
+            color: aliceblue;
+            font-size: 15px;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        footer a {
+            color: aliceblue;
+            margin-left: auto;
+            margin-right: 10px;
+        }
+        .bloco {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="bloco">
+        <header>
+            <h1>Cadastro funcionarios</h1>
+        <input type="button" id="btnAddFunc" value="Adicionar">
+        <input type="button" id="btn" value="exibir funcionarios">
+        <select name="select" id="filtrar">
+            <option value="">Filtrar</option>
+            <option value="idade">Idade</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="matricula">Matricula</option>
+            <option value="nome">Nome</option>
+        </select>
+        <label for="">Pesquisar:</label>
+        <input type="text" id="pesquisar" placeholder="Digite o nome...">
+        <label for="">Excluir funcionario:</label>
+        <input type="number" id="excluirFuncionario" placeholder="Digite a matricula...">
+        <input type="button" id="btnEx" value="Excluir todos">
+        </header>
+        <div class="conteiner">
+    
+        </div>
+        <footer>
+            <p>Powered By - Diego Leite de Sousa</p>
+            <a href="https://github.com/diegolts7" target="_blank"><i class="fab fa-brands fa-github fa-2x"></i></a>
+        </footer>
+    </div>
+    <script src="listaArrays.js"></script>
+</body>
+</html>
