@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    box-sizing: border-box;
+}
+
+.conteiner {
+    display: grid;
+    grid-template-columns: auto 80%;
+    grid-template-rows: 8% auto 5%;
+    background-color: gray;
+    min-height: 100vh; /* Garante que o contêiner ocupe toda a altura da viewport */
+}
+
+header {
+    order: 1;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav {
+    order: 2;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    order: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    order: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    align-self: end; /* Alinha o footer à parte inferior do grid */
+    background-color: aqua;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
